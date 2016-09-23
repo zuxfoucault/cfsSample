@@ -37,8 +37,8 @@ function targetImage(initSetting, experimentPars, cfsPars)
 		[initSetting.tvbl initSetting.sot] = Screen('Flip', initSetting.windowPtr);
 
 
-		if (initSetting.sot - tmp1)/experimentPars.durationTarget < 1,
-			if (initSetting.sot - tmp2)/cfsPars.mondFlashDur >= 1
+		if initSetting.sot - tmp1 < experimentPars.durationTarget,
+			if initSetting.sot - tmp2 >= cfsPars.mondFlashDur,
 				[object,xCenter, yCenter, color] = ...
 					drawMondrians(initSetting, experimentPars, cfsPars);
 				tmp2 = initSetting.sot;
